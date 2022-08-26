@@ -72,7 +72,7 @@
 
                             <i class="fa-solid fa-magnifying-glass"></i>
 
-                            <input type="text" placeholder="Cerca contatto">
+                            <input @keyup.enter="contactFind()" v-model="contactSearch" type="text" placeholder="Cerca contatto">
 
                         </div>
                     </div>
@@ -80,16 +80,21 @@
                     <!-- CONTACT LIST -->
                     <div class="contacts-list">
 
-                        <div @click="chatSelector(index)" v-for="contact, index in contacts" class="contact-card" :class="{'active': index === activeContact}">
+                        <div @click="chatSelector(index)" v-if="contact.visible" v-for="contact, index in contacts" class="contact-card" :class="{'active': index === activeContact}">
 
                             <!-- CONTACT TEMPLATE -->
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
 
                             <div class="contact-info">
-
+                              <div class="msg-info">
                                 <span> {{ contact.name }} </span>
+                                <span>{{contact.messages[contact.messages.length - 1].date}}</span>
 
-                                <span> <br> </span>
+                              </div>
+
+                                
+
+                                <span> <br> {{contact.messages[contact.messages.length - 1].text}}</span>
 
                             </div>
 
@@ -110,7 +115,7 @@
 
                             <div class="contact-info">
                                 <span> {{ contacts[activeContact].name }} </span>
-                                <span>Ultimo accesso oggi alle [data contatto]</span>
+                                <span>Ultimo accesso: {{contacts[activeContact].lastLogin}}</span>
                             </div>
                             
 

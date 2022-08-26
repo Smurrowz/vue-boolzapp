@@ -8,7 +8,7 @@ const app = new Vue({
     },
 
     userNewMessage: '',
-
+    contactSearch: '',
     activeContact: 0,
 
     contacts: [
@@ -16,6 +16,7 @@ const app = new Vue({
         name: 'RRR',
         avatar: '_1',
         visible: true,
+        lastLogin : '18/08/2022 16:30:55',
         messages: [
           {
             date: '12/04/2022 06:30:55',
@@ -37,7 +38,8 @@ const app = new Vue({
       {
         name: 'Josel',
         avatar: '_2',
-        visible: false,
+        visible: true,
+        lastLogin : '28/08/2022 16:30:55',
         messages: [
           {
             date: '12/04/2022 06:30:55',
@@ -59,7 +61,8 @@ const app = new Vue({
       {
         name: 'Alberto',
         avatar: '_3',
-        visible: false,
+        visible: true,
+        lastLogin : '31/10/2022 16:30:55',
         messages: [
           {
             date: '12/04/2022 06:30:55',
@@ -81,7 +84,8 @@ const app = new Vue({
       {
         name: 'Rotolone',
         avatar: '_4',
-        visible: false,
+        visible: true,
+        lastLogin : '31/11/2022 16:30:55',
         messages: [
           {
             date: '12/04/2022 06:33:02',
@@ -134,7 +138,23 @@ const app = new Vue({
         setTimeout(this.newReceiveMessage, 1000)
 
       }
-    }
+    },
+    contactFind(){
+      console.log(this.contactSearch)
+      for (let i = 0; i < this.contacts.length; i++) {
+        const el = this.contacts[i];
+        const normName = el.name.toLowerCase()
+        const normInput = this.contactSearch.toLowerCase()
+        if(normName.includes(normInput)){
+          el.visible = true
+        }else{
+          el.visible = false
+        }
+        
+        
+      }
+    },
+
 
 
 

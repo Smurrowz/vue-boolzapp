@@ -39,8 +39,14 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 5px;
+  flex-grow: 1;
+  
 }
-
+.msg-info{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
 .contact-info span:last-child {
   font-size: 11px;
   color: grey;
@@ -52,7 +58,7 @@
 .left-side {
   width: 35%;
   background-color: lightcyan;
-  
+
 }
 
 .top {
@@ -70,7 +76,8 @@
   margin-left: 5px;
 }
 
-.top-left, .top-right {
+.top-left,
+.top-right {
   line-height: 4rem;
 }
 
@@ -142,6 +149,7 @@
   height: 5rem;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .contact-card img {
@@ -149,6 +157,8 @@
   max-height: 3rem;
   margin: 0 10px;
 }
+
+
 
 .active {
   background-color: #e9ebea;
@@ -173,7 +183,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem ;
+  padding-top: 1rem;
 }
 
 .message {
@@ -189,7 +199,7 @@
 
 .sent {
   align-self: flex-end;
-  background-color: #d5f9ba;    
+  background-color: #d5f9ba;
 }
 
 .message-date {
