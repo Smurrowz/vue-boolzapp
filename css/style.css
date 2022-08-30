@@ -187,7 +187,7 @@
 }
 
 .message {
-  padding: 16px 8px;
+  padding: 16px 30px 16px 8px;
   min-width: 40%;
   max-width: 55%;
   margin: 10px 0;
@@ -238,3 +238,44 @@
   text-align: center;
   cursor: pointer;
 }
+
+.message-options {
+  position: absolute;
+  right: 5px;
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+  top: 50%;
+  right: 5px;
+  transform: translate(0, -50%);
+  display: none;
+  cursor: pointer;
+}
+
+.message:hover .message-options {
+  display: block;
+}
+.message-menu {
+  width: 200px;
+  background-color: white;
+  position: absolute;
+  right: 5px;
+  top: 40px;
+  text-align: center;
+  z-index: 9999;
+  display: none;
+  border-radius: 10px;
+}
+
+.message-menu div {
+  padding: 10px 0;
+  cursor: pointer;
+}
+.message-menu div:hover {
+  background-color: lightgray;
+}
+
+.active-menu {
+  display:block;
+}
+
