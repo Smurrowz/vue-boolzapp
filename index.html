@@ -157,11 +157,17 @@
                                 <div class="message-menu" :class="{'active-menu': message.activeMenu}">
     
                                     <div @click="deleteMessage(index)">
-                                            Elimina Messaggio
+                                        Elimina Messaggio
                                     </div>
                                             
-                                    <div>
-                                            Info Messaggio
+                                    <div :class="{'info-msg': message.activeInfo}"@click="showInfo(index), popInfo(index)" >
+                                        Info Messaggio
+                                        <div v-show="message.activeInfo === true">
+                                           Autore: {{msgInfo.autore}}
+                                           <br>
+                                           Data e ora del messaggio: {{msgInfo.data}}
+                                        </div>
+                
                                     </div>
                                     <div @click="deleteAllMessages()"> Cancella chat</div>
                                 </div>

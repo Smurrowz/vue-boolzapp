@@ -262,7 +262,7 @@
   right: 5px;
   top: 40px;
   text-align: center;
-  z-index: 9999;
+  z-index: 9998;
   display: none;
   border-radius: 10px;
 }
@@ -270,6 +270,11 @@
 .message-menu div {
   padding: 10px 0;
   cursor: pointer;
+}
+.message-menu div.info-msg {
+  height: 100px;
+  cursor: pointer;
+  
 }
 .message-menu div:hover {
   background-color: lightgray;
