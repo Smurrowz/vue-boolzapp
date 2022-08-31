@@ -174,6 +174,7 @@ const app = new Vue({
         activeInfo: false,
       }
       this.contacts[this.activeContact].messages.push(newReceivedMessage)
+      this.contacts[this.activeContact].lastLogin = dayjs().format('DD/MM/YYYY hh:mm:ss')
 
 
     },
