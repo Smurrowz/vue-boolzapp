@@ -7,7 +7,22 @@ const app = new Vue({
       userMenu: false,
       avatar: '_7'
     },
-
+    replies : [
+      "ok",
+      "BRUH BRUH BRUH BRUH",
+      "MAAAN STFU",
+      "BUCCI STAI ZITTO CHE SEI UN BOTTAZZO",
+      "GG EZ thanks for tutorial",
+      "Albé sei un babbo, Charizard é fuoco volante",
+      "NO",
+      "Dandyyyyyyyyyyyyr",
+      "Pazz.",
+      "Esko",
+      "MAMMA MI SI SONO BLOCCATE LE GAMBE",
+      "no devo giocare a sushi sashimi 794 Z",
+      "King prendi un tank una volta pls",
+      "Ziopé ma se ti ho raccolto dalla strada"
+    ],
     userNewMessage: '',
     contactSearch: '',
     activeContact: 0,
@@ -153,7 +168,7 @@ const app = new Vue({
 
       const newReceivedMessage = {
         date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
-        text: 'ok',
+        text: this.replies[Math.floor(Math.random()*this.replies.length)],
         status: 'received',
         activeMenu: false,
         activeInfo: false,
