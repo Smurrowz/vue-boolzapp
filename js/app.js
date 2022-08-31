@@ -144,13 +144,7 @@ const app = new Vue({
           activeInfo: false,
         }
         this.contacts[this.activeContact].messages.push(newMessage)
-        for (let i = 0; i < this.contacts[this.activeContact].messages.length; i++) {
-          const element = this.contacts[this.activeContact].messages[i];
-          
-          if(element.text === 'la nostra chat é vuota'){
-            this.contacts[this.activeContact].messages.splice(0,1)
-          }
-        }
+        
 
 
       }
@@ -213,14 +207,7 @@ const app = new Vue({
     deleteAllMessages() {
       const lunghezzaArray = this.contacts[this.activeContact].messages.length
       this.contacts[this.activeContact].messages.splice(0,lunghezzaArray)
-      const emptyChat = {
-        
-        text: 'la nostra chat é vuota',
-        
-        
-      }
-      this.contacts[this.activeContact].messages.push(emptyChat)
-
+      
       
     },
     showInfo(index){
@@ -228,7 +215,7 @@ const app = new Vue({
       this.msgInfo.data = ''
       if(this.contacts[this.activeContact].messages[index].status === 'sent'){
         // console.log(this.user.name) 
-        this.msgInfo.autore = this.user.name
+        this.msgInfo.autore = 'Tu'
         
       }else{
         // console.log(this.contacts[this.activeContact].name)
