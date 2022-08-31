@@ -202,17 +202,11 @@ const app = new Vue({
       }
     },
     popMenu(index) {
-      for (let i = 0; i <  this.contacts[this.activeContact].messages.length; i++) {
-        const el =  this.contacts[this.activeContact].messages[i];
-        el.activeMenu = false
-      }
-     
       this.contacts[this.activeContact].messages[index].activeMenu = !this.contacts[this.activeContact].messages[index].activeMenu;
+      
     },
     popInfo(index) {
-
       this.contacts[this.activeContact].messages[index].activeInfo = !this.contacts[this.activeContact].messages[index].activeInfo;
-
     },
     deleteMessage(index) {
 

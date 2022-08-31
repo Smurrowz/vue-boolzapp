@@ -259,12 +259,14 @@
   width: 200px;
   background-color: white;
   position: absolute;
-  right: 5px;
+  right: 40px;
   top: 40px;
   text-align: center;
   z-index: 9998;
   display: none;
   border-radius: 10px;
+  border: 1px solid cornflowerblue;
+  overflow: hidden;
 }
 
 .message-menu div {
@@ -277,7 +279,7 @@
   
 }
 .message-menu div:hover {
-  background-color: lightgray;
+  background-color: rgb(166, 219, 219);
 }
 
 .active-menu {
